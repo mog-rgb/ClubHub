@@ -1,0 +1,38 @@
+{% extends 'user_base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block description %} Home {% endblock %}
+
+{% block css %}
+    <style>
+
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            {% include 'common/user/search.html' with btn_class='bottom: 22%;left: 2%;' form_control='form-control-lg pl-5 w-100' css_div_class='w-100'  %}
+        </div>
+    </div>
+
+    {% include 'common/user/organization-listing.html' %}
+
+{% endblock %}
+
+{% block js %}
+    <script src='{% static "custom_js/user_home.js" %}'></script>
+    <script>
+        let data;
+        window.onload = function () {
+            data = {
+                "event_url" : ' {% url "organization" %}',
+                "loader": "{% static 'images/loader.gif' %}",
+            };
+
+            new Organization(data);
+        }
+    </script>
+{% endblock %}

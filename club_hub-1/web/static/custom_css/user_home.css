@@ -1,0 +1,68 @@
+.nav-link{
+    font-weight: bolder !important;
+}
+
+.anchor-remove, .anchor-remove:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+.event{
+    width: 33.33%;
+    min-height: 250px;
+    max-height: 400px;
+}
+.event h4{
+    max-height: 34px;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: initial;
+}
+
+@media screen and (max-width: 900px) {
+    .event {
+        width: 49%
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .event {
+        width: 100%
+    }
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}

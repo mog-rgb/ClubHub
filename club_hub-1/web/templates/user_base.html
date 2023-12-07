@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="title" content="{% block title %} {% endblock %}">
+    <meta name="description" content="{% block description %} {% endblock %}">
+
+
+    <!-- PAGE TITLE HERE -->
+    <title>Club Hub</title>
+
+    {% include "common/user/css_import.html" %}
+
+    {% block css %}{% endblock %}
+
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    {% include 'common/user/navbar.html' %}
+        {% block content %}
+        {% endblock %}
+
+
+{% include 'common/user/js_import.html' %}
+
+{% block js %}
+{% endblock %}
+{% include "common/user/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+:root {
+    --primary-color: #00CEFF;
+    --secondary-color: #404040
+}
+
+.btn-primary{
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover{
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-control:hover, .form-control:focus{
+    border-color: var(--primary-color);
+    box-shadow: none !important;
+}
+input[type=checkbox]:checked{
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+input[type=checkbox]:active{
+    box-shadow: none;
+}
+
+/* Style for the elements with the custom error class */
+input.error, select.error, textarea.error {
+  border: 1px solid red !important;
+}
+
+/* Style for the error messages */
+label.error {
+  color: red !important;
+}
+
+/*.form-control{*/
+/*    border-radius: 0px !important;*/
+/*    border-color: var(--primary-color) !important;*/
+/*}*/
+
+/*.bg-primary-color{*/
+/*    background: var(--primary-color);*/
+/*}*/
+
+input[type=file].form-control{
+    border: none;
+}
+
+.card-primary.card-outline{
+    border-top-color: var(--primary-color);
+}
+
+.input-group label{
+    position: absolute;
+    bottom: -30px;
+}
+
+.search-results {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+.result-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+    background: white;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}

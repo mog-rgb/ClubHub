@@ -1,0 +1,77 @@
+{% extends 'user_base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block description %} Home {% endblock %}
+
+{% block css %}
+    <style>
+
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            {% if rating %}
+            <div class="col-12 p-4" style="background: rgba(189,227,255,255)">
+                <h3 class="font-weight-bolder mx-2 px-4">Recent Review:</h3>
+                <a href="javascript:void(0)" class="anchor-remove d-flex flex-grow-1 flex-column px-4 py-2 text-decoration-none text-black">
+                    <div class="d-flex flex-row mx-2">
+                        <div style="
+                        width: 300px;
+                        height: 150px;
+                        background-repeat:
+                        no-repeat; background-position: center;
+                        background-size: contain;
+                        background-image: url({{ recent_review.file }});
+                        "
+                        ></div>
+                        <div class="d-flex flex-column flex-grow-1">
+                            <div>
+                                {% for obj in range %}
+                                    {% if obj < rating.rating %}
+                                        <i class="fa fa-star" style="color: #ffc700"></i>
+                                    {% else %}
+                                        <i class="fa fa-star" style="color: #ccc"></i>
+                                    {% endif %}
+                                {% endfor %}
+                                
+                            </div>
+                            <div>
+                                {% autoescape off %}
+                                    {{ rating.remarks }}
+                                {% endautoescape %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column mx-2">
+                        <h4>{{ recent_review.name }}</h4>
+                        <div>Rating: {{ recent_review.average_rating }} <i class="fa fa-star" style="color: #ffc700"></i></div>
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% include 'common/user/organization-listing.html' %}
+
+{% endblock %}
+
+{% block js %}
+    <script src='{% static "custom_js/user_home.js" %}'></script>
+    <script>
+        let data;
+        window.onload = function () {
+            data = {
+                "event_url" : ' {% url "organization" %}',
+                "loader": "{% static 'images/loader.gif' %}"
+            };
+
+            new Organization(data);
+        }
+    </script>
+{% endblock %}

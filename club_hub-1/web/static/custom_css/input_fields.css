@@ -1,0 +1,69 @@
+/*Custom Input */
+.form-group-inline{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 0rem;
+    position: relative;
+}
+
+.form-group-inline .label{
+    background: var(--primary-color);
+    color: white;
+    width: 50%;
+    height: 3rem;
+
+}
+.form-group-inline .label h5{
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 9px;
+}
+
+.form-group-inline .input-field{
+    width: 50%;
+    position: relative;
+}
+.form-group-inline .input-field input, .form-group-inline .input-field select, .form-group-inline .input-field textarea{
+    width: 100%;
+    border-color: var(--primary-color);
+    height: 3rem;
+    font-size: 1.5rem;
+}
+.form-group-inline .input-field select{
+    text-align: center;
+}
+
+.form-group-inline .input-field label.error{
+    position: absolute;
+    left: -100%;
+    bottom: -24px;
+}
+.form-group-inline .input-field input:focus, .form-group-inline .input-field select:focus{
+    outline: none !important;
+}
+
+.btn-primary{
+    background: var(--primary-color);
+    color: white;
+    border-radius: 0px !important;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.3rem;
+    transition: 0.3s all ease-in-out;
+}
+.btn-primary:hover{
+    background: white;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transition: 0.3s all ease-in-out;
+}
+
+.pagination .page-link{
+    color: var(--primary-color) !important;
+}
+.pagination .active .page-link{
+    color: white !important;
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
